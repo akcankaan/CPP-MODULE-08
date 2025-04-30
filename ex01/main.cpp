@@ -13,7 +13,11 @@ int main() {
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span: " << sp.longestSpan() << std::endl;
 
-        std::vector<int> extraNumbers = {100, 200, 300};
+        std::vector<int> extraNumbers;
+        extraNumbers.push_back(100);
+        extraNumbers.push_back(200);
+        extraNumbers.push_back(300);
+
         sp.addRange(extraNumbers.begin(), extraNumbers.end());
 
         std::cout << "Shortest span after adding more numbers: " << sp.shortestSpan() << std::endl;

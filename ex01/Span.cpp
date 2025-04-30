@@ -1,9 +1,7 @@
 #include "Span.hpp"
 
-// Constructor
 Span::Span(unsigned int N) : _N(N) {}
 
-// addNumber: Adds a single number to the vector
 void Span::addNumber(int n)
 {
     if (_numbers.size() >= _N)
@@ -11,7 +9,6 @@ void Span::addNumber(int n)
     _numbers.push_back(n);
 }
 
-// addRange: Adds a range of numbers to the vector
 template <typename Iterator>
 void Span::addRange(Iterator begin, Iterator end)
 {
@@ -22,7 +19,6 @@ void Span::addRange(Iterator begin, Iterator end)
     }
 }
 
-// shortestSpan: Finds the shortest span
 unsigned int Span::shortestSpan() const
 {
     if (_numbers.size() < 2)
@@ -41,7 +37,6 @@ unsigned int Span::shortestSpan() const
     return minSpan;
 }
 
-// longestSpan: Finds the longest span
 unsigned int Span::longestSpan() const
 {
     if (_numbers.size() < 2)
@@ -53,5 +48,4 @@ unsigned int Span::longestSpan() const
     return max - min;
 }
 
-// Explicit instantiation for vector iterator
 template void Span::addRange<std::vector<int>::iterator>(std::vector<int>::iterator, std::vector<int>::iterator);

@@ -8,34 +8,33 @@
 
 class Span
 {
-private:
-    unsigned int _N;
-    std::vector<int> _numbers;
+    private:
+        unsigned int _N;
+        std::vector<int> _numbers;
 
-public:
-    Span(unsigned int N);
+    public:
+        Span(unsigned int N);
 
-    void addNumber(int n);
-    template <typename Iterator>
-    void addRange(Iterator begin, Iterator end);
-    unsigned int shortestSpan() const;
-    unsigned int longestSpan() const;
+        void addNumber(int n);
+        template <typename Iterator>
+        void addRange(Iterator begin, Iterator end);
+        unsigned int shortestSpan() const;
+        unsigned int longestSpan() const;
 
-    class NoSpaceException : public std::exception
-    {
-        const char *what() const throw()
+        class NoSpaceException : public std::exception
         {
-            return "No space left to add more numbers!";
-        }
-    };
+            const char *what() const throw()
+            {
+                return "No space left to add more numbers!";
+            }
+        };
 
-    class NoSpanException : public std::exception
-    {
-        const char *what() const throw()
+        class NoSpanException : public std::exception
         {
-            return "Not enough numbers to calculate span!";
-        }
+            const char *what() const throw()
+            {
+                return "Not enough numbers to calculate span!";
+            }
+        };
     };
-};
-
 #endif
